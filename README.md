@@ -10,6 +10,23 @@
 /home/jay/worklog-calendar-prototype/index.html
 ```
 
+## Docker 실행
+
+Docker Compose로 실행:
+
+```sh
+docker compose up --build
+```
+
+브라우저에서 `http://localhost:8080`을 열면 됩니다.
+
+Docker만 사용해서 실행:
+
+```sh
+docker build -t worklog-calendar-prototype .
+docker run --rm -p 8080:80 worklog-calendar-prototype
+```
+
 ## 주요 기능
 
 - 주간 캘린더에서 근무 일정 확인
@@ -53,6 +70,9 @@
 
 ```text
 worklog-calendar-prototype/
+├── Dockerfile
+├── compose.yaml
+├── nginx.conf
 ├── index.html
 ├── styles.css
 ├── app.js
